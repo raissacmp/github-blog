@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import { PostDetails } from "./pages/Posts";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 
@@ -7,7 +8,7 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <div className="App">
         <GlobalStyle />
-        <h1>Github Blog</h1>
+        <PostDetails />
       </div>
     </ThemeProvider>
   );
