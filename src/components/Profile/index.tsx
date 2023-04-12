@@ -1,5 +1,19 @@
-import { api } from "../../lib/axios";
 import { useEffect, useState } from "react";
+import { api } from "../../lib/axios";
+
+import externalLink from "../../assets/externalLink.svg";
+import followersIcon from "../../assets/followersIcon.svg";
+import githubIcon from "../../assets/githubIcon.svg";
+import localeIcon from "../../assets/localeIcon.svg";
+
+import {
+  DetailsProfile,
+  ImageProfile,
+  LinkGitHubContainer,
+  PersonalInfos,
+  ProfileContainer,
+  ProfileContent,
+} from "./styles";
 
 interface Profile {
   avatar_url: string;
@@ -12,7 +26,6 @@ interface Profile {
 
 export function Profile() {
   const [dataProfile, setDataProfile] = useState<Profile>();
-  console.log("🚀 ~ file: index.tsx:6 ~ Profile ~ dataProfile:", dataProfile);
 
   async function getUserData() {
     const url = "/users/raissacmp";
@@ -26,24 +39,40 @@ export function Profile() {
   }, []);
 
   return (
-    <main>
+    <ProfileContainer>
       {dataProfile && (
-        <section>
+        <ProfileContent>
           <div>
-            <img src={dataProfile.avatar_url} alt="Avatar Github" />
+            <ImageProfile src={dataProfile.avatar_url} alt="Avatar Github" />
           </div>
-          <div>
-            <h1>{dataProfile.name}</h1>
-            <a href="https://github.com/raissacmp">GITHUB</a>
-          </div>
-          <p>{dataProfile.bio}</p>
-          <div>
-            <span>{dataProfile.login}</span>
-            <span>{dataProfile.location}</span>
-            <span>{dataProfile.followers}</span>
-          </div>
-        </section>
+          <DetailsProfile>
+            <LinkGitHubContainer>
+              <h1>{dataProfile.name}</h1>
+              <a href="https://github.com/raissacmp" target="_blank">
+                GITHUB
+                <img src={externalLink} alt="" />
+              </a>
+            </LinkGitHubContainer>
+            <div>
+              <p>{dataProfile.bio}</p>
+              <PersonalInfos>
+                <span>
+                  <img src={githubIcon} alt="" />
+                  {dataProfile.login}
+                </span>
+                <span>
+                  <img src={localeIcon} alt="" />
+                  {dataProfile.location}
+                </span>
+                <span>
+                  <img src={followersIcon} alt="" /> {dataProfile.followers}{" "}
+                  followers
+                </span>
+              </PersonalInfos>
+            </div>
+          </DetailsProfile>
+        </ProfileContent>
       )}
-    </main>
+    </ProfileContainer>
   );
 }
