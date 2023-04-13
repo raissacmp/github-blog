@@ -42,7 +42,7 @@ export const TitleContainer = styled.div`
   }
 
   span {
-    font-size: 14px;
+    font-size: 10px;
     color: ${(props) => props.theme["span"]};
   }
 `;
