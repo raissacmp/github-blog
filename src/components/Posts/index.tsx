@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { api } from "../../lib/axios";
+import { dateFormatter } from "../../utils/formatter";
 
-import { Post, PostsContainer, PostsContent } from "./styles";
+import { Post, PostsContainer, PostsContent, TitleContainer } from "./styles";
 
 interface Posts {
   title: string;
@@ -30,7 +31,10 @@ export function Posts() {
         {postsData.map((post) => {
           return (
             <Post key={post.id}>
-              <h1>{post.title}</h1>
+              <TitleContainer>
+                <h1>{post.title}</h1>
+                <span>{dateFormatter.format(new Date(post.created_at))} </span>
+              </TitleContainer>
               <p>{post.body}</p>
             </Post>
           );

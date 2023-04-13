@@ -16,11 +16,7 @@ export const Post = styled.section`
   background: #112131;
   border-radius: 10px;
   padding: 32px;
-
-  h1 {
-    height: 60px;
-    color: ${(props) => props.theme["title"]};
-  }
+  cursor: pointer;
 
   p {
     display: -webkit-box;
@@ -32,5 +28,21 @@ export const Post = styled.section`
 
   &:hover {
     border: 2px solid ${(props) => props.theme["label"]};
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+
+  h1 {
+    height: 60px;
+    color: ${(props) => props.theme["title"]};
+    font-size: 20px;
+  }
+
+  span {
+    font-size: 14px;
+    color: ${(props) => props.theme["span"]};
   }
 `;
