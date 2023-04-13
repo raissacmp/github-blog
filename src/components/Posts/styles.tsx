@@ -17,6 +17,7 @@ export const Post = styled.section`
   border-radius: 10px;
   padding: 32px;
   cursor: pointer;
+  border: 2px solid transparent;
 
   p {
     display: -webkit-box;
