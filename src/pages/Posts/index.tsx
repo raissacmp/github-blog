@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header";
+import { Posts } from "../../components/Posts";
 import { Profile } from "../../components/Profile";
 
 export function PostDetails() {
@@ -6,6 +7,7 @@ export function PostDetails() {
     <div>
       <Header />
       <Profile />
+      <Posts />
     </div>
   );
 }
