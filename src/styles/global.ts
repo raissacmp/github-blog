@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
-  /* background-color: #071422 */
+  background-color: #071422
   }
   body, input, textarea, button {
     font: 400 1rem Nunito, sans-serif;

@@ -60,6 +60,9 @@ export const LinkGitHubContainer = styled.div`
     img {
       margin-left: 8px;
     }
+    &:hover {
+      border-bottom: 2px solid ${(props) => props.theme["blue"]};
+    }
   }
 `;
 

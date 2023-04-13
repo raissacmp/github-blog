@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 
+import { Post, PostsContainer, PostsContent } from "./styles";
+
 interface Posts {
   title: string;
   body: string;
@@ -23,17 +25,17 @@ export function Posts() {
   }, []);
 
   return (
-    <main>
-      <article>
+    <PostsContainer>
+      <PostsContent>
         {postsData.map((post) => {
           return (
-            <section key={post.id}>
+            <Post key={post.id}>
               <h1>{post.title}</h1>
               <p>{post.body}</p>
-            </section>
+            </Post>
           );
         })}
-      </article>
-    </main>
+      </PostsContent>
+    </PostsContainer>
   );
 }
