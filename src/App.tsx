@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { PostDetails } from "./pages/Posts";
+import { Post } from "./pages/Post";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 
@@ -8,7 +8,7 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <div className="App">
         <GlobalStyle />
-        <PostDetails />
+        <Post />
       </div>
     </ThemeProvider>
   );

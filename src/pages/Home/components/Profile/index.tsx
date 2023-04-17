@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
+import { api } from "../../../../lib/axios";
 
-import externalLink from "../../assets/externalLink.svg";
-import followersIcon from "../../assets/followersIcon.svg";
-import githubIcon from "../../assets/githubIcon.svg";
-import localeIcon from "../../assets/localeIcon.svg";
+import externalLink from "../../../../../src/assets/externalLink.svg";
+import followersIcon from "../../../../../src/assets/followersIcon.svg";
+import githubIcon from "../../../../../src/assets/githubIcon.svg";
+import localeIcon from "../../../../../src/assets/localeIcon.svg";
 
 import {
   DetailsProfile,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
-import { dateFormatter } from "../../utils/formatter";
+import { api } from "../../../../lib/axios";
+import { dateFormatter } from "../../../../utils/formatter";
 
 import { Post, PostsContainer, PostsContent, TitleContainer } from "./styles";
 
