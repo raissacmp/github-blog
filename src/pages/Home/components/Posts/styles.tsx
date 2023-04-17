@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const PostsPage = styled.div`
+  a {
+    text-decoration: none;
+  }
+`;
+
 export const PostsContainer = styled.main`
   max-width: 864px;
   margin: 0 auto;

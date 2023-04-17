@@ -3,7 +3,13 @@ import { NavLink } from "react-router-dom";
 import { api } from "../../../../lib/axios";
 import { dateFormatter } from "../../../../utils/formatter";
 
-import { Post, PostsContainer, PostsContent, TitleContainer } from "./styles";
+import {
+  Post,
+  PostsContainer,
+  PostsContent,
+  PostsPage,
+  TitleContainer,
+} from "./styles";
 
 interface Posts {
   title: string;
@@ -27,27 +33,26 @@ export function Posts() {
   }, []);
 
   return (
-    <>
+    <PostsPage>
       <NavLink to={"/post"}>
-        <button>teste</button>
+        <PostsContainer>
+          <PostsContent>
+            {postsData.map((post) => {
+              return (
+                <Post key={post.id}>
+                  <TitleContainer>
+                    <h1>{post.title}</h1>
+                    <span>
+                      {dateFormatter.format(new Date(post.created_at))}{" "}
+                    </span>
+                  </TitleContainer>
+                  <p>{post.body}</p>
+                </Post>
+              );
+            })}
+          </PostsContent>
+        </PostsContainer>
       </NavLink>
-      <PostsContainer>
-        <PostsContent>
-          {postsData.map((post) => {
-            return (
-              <Post key={post.id}>
-                <TitleContainer>
-                  <h1>{post.title}</h1>
-                  <span>
-                    {dateFormatter.format(new Date(post.created_at))}{" "}
-                  </span>
-                </TitleContainer>
-                <p>{post.body}</p>
-              </Post>
-            );
-          })}
-        </PostsContent>
-      </PostsContainer>
-    </>
+    </PostsPage>
   );
 }

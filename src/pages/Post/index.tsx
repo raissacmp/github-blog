@@ -1,3 +1,7 @@
 export function Post() {
-  return <div>posts</div>;
+  return (
+    <div>
+      <h1>POST</h1>
+    </div>
+  );
 }
