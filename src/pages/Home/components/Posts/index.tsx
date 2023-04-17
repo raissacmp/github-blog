@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { api } from "../../../../lib/axios";
 import { dateFormatter } from "../../../../utils/formatter";
 
@@ -26,20 +27,27 @@ export function Posts() {
   }, []);
 
   return (
-    <PostsContainer>
-      <PostsContent>
-        {postsData.map((post) => {
-          return (
-            <Post key={post.id}>
-              <TitleContainer>
-                <h1>{post.title}</h1>
-                <span>{dateFormatter.format(new Date(post.created_at))} </span>
-              </TitleContainer>
-              <p>{post.body}</p>
-            </Post>
-          );
-        })}
-      </PostsContent>
-    </PostsContainer>
+    <>
+      <NavLink to={"/post"}>
+        <button>teste</button>
+      </NavLink>
+      <PostsContainer>
+        <PostsContent>
+          {postsData.map((post) => {
+            return (
+              <Post key={post.id}>
+                <TitleContainer>
+                  <h1>{post.title}</h1>
+                  <span>
+                    {dateFormatter.format(new Date(post.created_at))}{" "}
+                  </span>
+                </TitleContainer>
+                <p>{post.body}</p>
+              </Post>
+            );
+          })}
+        </PostsContent>
+      </PostsContainer>
+    </>
   );
 }
