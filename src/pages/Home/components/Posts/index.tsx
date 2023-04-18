@@ -11,11 +11,12 @@ import {
   TitleContainer,
 } from "./styles";
 
-interface Posts {
+export interface Posts {
   title: string;
   body: string;
   id: number;
   created_at: string;
+  number: number;
 }
 
 export function Posts() {
@@ -38,9 +39,9 @@ export function Posts() {
         <PostsContent>
           {postsData.map((post) => {
             return (
-              <NavLink to={"/post/1"}>
-                {/* mandando a informação */}
-                <Post key={post.id}>
+              <Post key={post.id}>
+                <NavLink to={`/post/${post.number}`}>
+                  {/* mandando a informação */}
                   <TitleContainer>
                     <h1>{post.title}</h1>
                     <span>
@@ -48,8 +49,8 @@ export function Posts() {
                     </span>
                   </TitleContainer>
                   <p>{post.body}</p>
-                </Post>
-              </NavLink>
+                </NavLink>
+              </Post>
             );
           })}
         </PostsContent>
