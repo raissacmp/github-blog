@@ -34,11 +34,12 @@ export function Posts() {
 
   return (
     <PostsPage>
-      <NavLink to={"/post"}>
-        <PostsContainer>
-          <PostsContent>
-            {postsData.map((post) => {
-              return (
+      <PostsContainer>
+        <PostsContent>
+          {postsData.map((post) => {
+            return (
+              <NavLink to={"/post/1"}>
+                {/* mandando a informação */}
                 <Post key={post.id}>
                   <TitleContainer>
                     <h1>{post.title}</h1>
@@ -48,11 +49,11 @@ export function Posts() {
                   </TitleContainer>
                   <p>{post.body}</p>
                 </Post>
-              );
-            })}
-          </PostsContent>
-        </PostsContainer>
-      </NavLink>
+              </NavLink>
+            );
+          })}
+        </PostsContent>
+      </PostsContainer>
     </PostsPage>
   );
 }
