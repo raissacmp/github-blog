@@ -9,7 +9,7 @@ import commentsIcon from "../../../src/assets/commentsIcon.svg";
 import externalLink from "../../../src/assets/externalLink.svg";
 import backIcon from "../../../src/assets/backIcon.svg";
 
-import { MainPostContent } from "./styles";
+import { MainPostContent, PostDetails } from "./styles";
 
 interface Post {
   title: string;
@@ -66,7 +66,7 @@ export function Post() {
             <header>
               <h1>{postData.title}</h1>
             </header>
-            <div>
+            <PostDetails>
               <div>
                 <span>
                   <img src={githubIcon} alt="" />
@@ -74,14 +74,16 @@ export function Post() {
                 </span>
               </div>
               <div>
-                <img src={calendarIcon} alt="" />
-                <span>{postData.created_at}</span>
+                <span>
+                  <img src={calendarIcon} alt="" /> {postData.created_at}
+                </span>
               </div>
               <div>
-                <img src={commentsIcon} alt="" />
-                <span>{postData.comments}</span>
+                <span>
+                  <img src={commentsIcon} alt="" /> {postData.comments}
+                </span>
               </div>
-            </div>
+            </PostDetails>
           </MainPostContent>
           <article>
             <p>{postData.body}</p>

@@ -6,13 +6,19 @@ export const MainPostContent = styled.section`
   height: 168px;
   display: flex;
   flex-direction: column;
-  /*  background: ${(props) => props.theme["profile"]}; */
-  background: white;
+  background: ${(props) => props.theme["profile"]};
   position: relative;
   top: -106px;
-  padding: 32px;
+  padding: 30px;
   border-radius: 10px;
   margin: 0 auto;
+
+  header {
+    h1 {
+      margin: 20px 0px 8px 0px;
+      color: ${(props) => props.theme["title"]};
+    }
+  }
 
   ul {
     display: flex;
@@ -21,5 +27,34 @@ export const MainPostContent = styled.section`
 
   li {
     list-style: none;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid ${(props) => props.theme["blue"]};
+    }
+  }
+
+  a {
+    font-size: 12px;
+    color: ${(props) => props.theme["blue"]};
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  img {
+    padding: 5px;
+  }
+`;
+
+export const PostDetails = styled.div`
+  display: flex;
+
+  span {
+    display: flex;
+    align-items: center;
+    margin-right: 32px;
+    color: ${(props) => props.theme["span"]};
   }
 `;
