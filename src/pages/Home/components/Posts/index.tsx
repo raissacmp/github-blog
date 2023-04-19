@@ -44,9 +44,7 @@ export function Posts() {
                   {/* mandando a informação */}
                   <TitleContainer>
                     <h1>{post.title}</h1>
-                    <span>
-                      {dateFormatter.format(new Date(post.created_at))}{" "}
-                    </span>
+                    <span>{dateFormatter(post.created_at)}</span>
                   </TitleContainer>
                   <p>{post.body}</p>
                 </NavLink>

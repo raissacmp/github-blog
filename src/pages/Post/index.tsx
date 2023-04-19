@@ -10,6 +10,7 @@ import externalLink from "../../../src/assets/externalLink.svg";
 import backIcon from "../../../src/assets/backIcon.svg";
 
 import { MainPostContent, PostBody, PostDetails } from "./styles";
+import { dateFormatter } from "../../utils/formatter";
 
 interface Post {
   title: string;
@@ -75,7 +76,8 @@ export function Post() {
               </div>
               <div>
                 <span>
-                  <img src={calendarIcon} alt="" /> {postData.created_at}
+                  <img src={calendarIcon} alt="" />{" "}
+                  {dateFormatter(postData.created_at)}
                 </span>
               </div>
               <div>

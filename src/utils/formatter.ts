@@ -1,1 +1,7 @@
-export const dateFormatter = new Intl.DateTimeFormat("es-EN");
+import moment from "moment";
+
+export function dateFormatter(props: string) {
+  const date = moment(props);
+  const formattedDate = date.fromNow();
+  return formattedDate;
+}

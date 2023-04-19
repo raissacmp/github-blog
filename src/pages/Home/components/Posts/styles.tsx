@@ -40,16 +40,22 @@ export const Post = styled.section`
 
 export const TitleContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
 
   h1 {
     height: 60px;
     color: ${(props) => props.theme["title"]};
     font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   span {
-    font-size: 10px;
+    font-size: 14px;
     color: ${(props) => props.theme["span"]};
+    white-space: nowrap;
+    margin-left: 16px;
   }
 `;
