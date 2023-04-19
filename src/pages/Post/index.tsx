@@ -9,7 +9,7 @@ import commentsIcon from "../../../src/assets/commentsIcon.svg";
 import externalLink from "../../../src/assets/externalLink.svg";
 import backIcon from "../../../src/assets/backIcon.svg";
 
-import { MainPostContent, PostDetails } from "./styles";
+import { MainPostContent, PostBody, PostDetails } from "./styles";
 
 interface Post {
   title: string;
@@ -85,9 +85,9 @@ export function Post() {
               </div>
             </PostDetails>
           </MainPostContent>
-          <article>
+          <PostBody>
             <p>{postData.body}</p>
-          </article>
+          </PostBody>
         </main>
       )}
     </>
