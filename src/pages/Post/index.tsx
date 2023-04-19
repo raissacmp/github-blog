@@ -50,10 +50,15 @@ export function Post() {
               <ul>
                 <li>
                   <img src={backIcon} alt="" />
-                  <a href="">Back</a>
+                  <a href="/">Back</a>
                 </li>
                 <li>
-                  <a href="">See on Github</a>
+                  <a
+                    target="_blank"
+                    href={`https://github.com/raissacmp/github-blog/issues/${number}`}
+                  >
+                    See on Github
+                  </a>
                   <img src={externalLink} alt="" />
                 </li>
               </ul>
