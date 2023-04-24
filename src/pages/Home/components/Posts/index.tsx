@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { api } from "../../../../lib/axios";
 import { dateFormatter } from "../../../../utils/formatter";
 
@@ -22,20 +26,52 @@ export interface Posts {
 export function Posts() {
   const [postsData, setPostsData] = useState<Posts[]>([]);
 
-  async function getUserData() {
-    const url = "/repos/raissacmp/github-blog/issues";
+  async function getUserData(query = "") {
+    //caso não tenha valor no input a query tem valor padrão de vazio
+    const url = `/search/issues?q=${query}repo:raissacmp/github-blog`;
     const response = await api.get(url);
 
-    setPostsData(response.data);
+    setPostsData(response.data.items);
   }
 
   useEffect(() => {
     getUserData();
   }, []);
 
+  //BUSCA
+
+  const searchFormSchema = z.object({
+    query: z.string(),
+  });
+
+  type SearchFormInputs = z.infer<typeof searchFormSchema>;
+
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SearchFormInputs>({
+    resolver: zodResolver(searchFormSchema),
+  });
+
+  async function handleSearchPosts(data: SearchFormInputs) {
+    //data input
+    await getUserData(data.query);
+  }
+
   return (
     <PostsPage>
       <PostsContainer>
+        <div>
+          <p>Publications</p>
+          <span>{postsData?.length} Publications</span>
+        </div>
+        <form onSubmit={handleSubmit(handleSearchPosts)}>
+          <input type="text" placeholder="Busca" {...register("query")} />
+          <button type="submit" disabled={isSubmitting}>
+            Buscar
+          </button>
+        </form>
         <PostsContent>
           {postsData.map((post) => {
             return (
