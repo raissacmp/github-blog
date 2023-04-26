@@ -6,13 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { api } from "../../../../lib/axios";
 import { dateFormatter } from "../../../../utils/formatter";
+import search from "../../../../../src/assets/search.svg";
 
 import {
   Post,
   PostsContainer,
   PostsContent,
   PostsPage,
+  SearchForm,
   TitleContainer,
+  TitleContainerSearch,
 } from "./styles";
 
 export interface Posts {
@@ -62,16 +65,22 @@ export function Posts() {
   return (
     <PostsPage>
       <PostsContainer>
-        <div>
-          <p>Publications</p>
-          <span>{postsData?.length} Publications</span>
-        </div>
-        <form onSubmit={handleSubmit(handleSearchPosts)}>
-          <input type="text" placeholder="Busca" {...register("query")} />
-          <button type="submit" disabled={isSubmitting}>
-            Buscar
-          </button>
-        </form>
+        <section>
+          <TitleContainerSearch>
+            <h2>Publications</h2>
+            <p>{postsData?.length} publications</p>
+          </TitleContainerSearch>
+          <SearchForm onSubmit={handleSubmit(handleSearchPosts)}>
+            <input
+              type="text"
+              placeholder="Type your search term"
+              {...register("query")}
+            />
+            <button type="submit" disabled={isSubmitting}>
+              <img src={search} alt="" />
+            </button>
+          </SearchForm>
+        </section>
         <PostsContent>
           {postsData.map((post) => {
             return (

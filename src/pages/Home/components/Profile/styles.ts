@@ -6,20 +6,20 @@ export const ProfileContainer = styled.main`
 `;
 
 export const ProfileContent = styled.section`
-  max-width: 864px;
+  max-width: 54rem;
   width: 100%;
-  height: 212px;
+  height: 13.25rem;
   display: flex;
   align-items: center;
   background: ${(props) => props.theme["profile"]};
   position: relative;
-  top: -106px;
-  padding: 32px;
-  border-radius: 10px;
+  top: -6.625rem;
+  padding: 2rem;
+  border-radius: 0.625rem;
 
   h1 {
     color: ${(props) => props.theme["title"]};
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   span {
@@ -27,11 +27,11 @@ export const ProfileContent = styled.section`
   }
   p {
     color: ${(props) => props.theme["text"]};
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
 
   a {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: ${(props) => props.theme["blue"]};
     text-decoration: none;
   }
@@ -39,35 +39,35 @@ export const ProfileContent = styled.section`
 
 export const DetailsProfile = styled.div`
   height: 100%;
-  padding-left: 32px;
+  padding-left: 2rem;
   width: 100%;
 `;
 
 export const ImageProfile = styled.img`
-  width: 148px;
-  height: 148px;
-  border-radius: 8px;
+  width: 9.25rem;
+  height: 9.25rem;
+  border-radius: 0.5rem;
 `;
 
 export const LinkGitHubContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 
   a {
     display: flex;
     img {
-      margin-left: 8px;
+      margin-left: 0.5rem;
     }
     &:hover {
-      border-bottom: 2px solid ${(props) => props.theme["blue"]};
+      border-bottom: 0.125rem solid ${(props) => props.theme["blue"]};
     }
   }
 `;
 
 export const PersonalInfos = styled.div`
-  max-width: 400px;
+  max-width: 25rem;
   display: flex;
   justify-content: space-between;
 
@@ -75,7 +75,7 @@ export const PersonalInfos = styled.div`
     display: flex;
 
     img {
-      margin-right: 8px;
+      margin-right: 0.5rem;
     }
   }
 `;

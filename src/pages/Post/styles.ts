@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 export const MainPostContent = styled.section`
-  max-width: 864px;
+  max-width: 54rem;
   width: 100%;
-  height: 168px;
+  height: 10.5rem;
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme["profile"]};
   position: relative;
-  top: -84px;
-  padding: 30px;
-  border-radius: 10px;
+  top: -5.25rem;
+  padding: 1.875rem;
+  border-radius: 0.625rem;
   margin: 0 auto;
 
   header {
     h1 {
-      margin: 20px 0px 8px 0px;
+      margin: 1.25rem 0rem 0.5rem 0rem;
       color: ${(props) => props.theme["title"]};
     }
   }
@@ -29,22 +29,22 @@ export const MainPostContent = styled.section`
     list-style: none;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid transparent;
+    border-bottom: 0.125rem solid transparent;
 
     &:hover {
-      border-bottom: 2px solid ${(props) => props.theme["blue"]};
+      border-bottom: 0.125rem solid ${(props) => props.theme["blue"]};
     }
   }
 
   a {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: ${(props) => props.theme["blue"]};
     text-decoration: none;
     text-transform: uppercase;
   }
 
   img {
-    padding: 5px;
+    padding: 0.3125rem;
   }
 `;
 
@@ -54,7 +54,7 @@ export const PostDetails = styled.div`
   span {
     display: flex;
     align-items: center;
-    margin-right: 32px;
+    margin-right: 2rem;
     color: ${(props) => props.theme["span"]};
   }
 `;
@@ -62,7 +62,7 @@ export const PostDetails = styled.div`
 export const PostBody = styled.article`
   p {
     color: ${(props) => props.theme["text"]};
-    max-width: 800px;
+    max-width: 50rem;
     margin: 0 auto;
   }
 `;
