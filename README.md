@@ -14,6 +14,7 @@ Development of a post page with navigation and search filter.
 - [TypeScript](https://www.typescriptlang.org/docs/)
 - [Styled Component](https://styled-components.com/)
 - [React Hook Form](https://react-hook-form.com/)
+- [React Router](https://reactrouter.com/en/main)
 - [Zod](https://zod.dev/)
 - [Axios](https://axios-http.com/docs/intro)
 
